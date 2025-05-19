@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'react-native';
+import UserListView from './src/views/UserListView';
+import UserLocationView from './src/views/UserLocationView';
+import { colors } from './src/styles/theme';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <StatusBar backgroundColor={colors.primary} barStyle="light-content" />
+        <Stack.Navigator
+            initialRouteName="UserList"
+            screenOptions={{
+              headerStyle: {
+                backgroundColor: colors.primary,
+                elevation: 4,
+              },
+              headerTintColor: colors.onPrimary,
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize: 18,
+              },
+            }}>
+          <Stack.Screen
+              name="UserList"
+              component={UserListView}
+              options={{ title: 'User Directory' }}
+          />
+          <Stack.Screen
+              name="UserLocation"
+              component={UserLocationView}
+              options={{ title: 'User Location' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
