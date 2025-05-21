@@ -31,7 +31,7 @@ Step-by-Step Installation Guide
 
 Clone the React Native app repository to your local machine:
 
-    git clone https://github.com/rshme/UserScope
+    git clone https://github.com/rshme/UserScope.git
 
 ### 2\. Install Dependencies
 
