@@ -2,7 +2,7 @@ export const colors = {
     // Material Design 3 inspired color palette
     primary: '#023e8a',        // Blue 700
     primaryVariant: '#1565C0', // Blue 800
-    secondary: '#da8403',      // Teal A400
+    secondary: '#da8403',      // Mango Tango
     background: '#FAFAFA',     // Grey 50
     surface: '#FFFFFF',        // White
     error: '#F44336',          // Red 500
